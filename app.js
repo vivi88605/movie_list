@@ -1,21 +1,17 @@
-// const http = require('http')
 const express = require('express')
 const app = express()
-// const hostname = 'localhost'
 const port = 3000
+// require express-handlebars
+const exphbs = require('express-handlebars')
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
 
 app.get('/', (req, res) => {
-  res.send('This is my movie list built with Express')
+  // res.send('This is my movie list built with Express')
+  res.render('index')
 })
-// const server = http.createServer((req, res) => {
-//   res.statusCode = 200
-//   res.setHeader('Content-Type', 'text/html')
-//   res.end(``)
-// })
 
 app.listen(port, () => {
   console.log(`the server is listening on localhost:${port}`)
 })
-// server.listen(port, hostname, () => {
-//   console.log(`the server is listening on ${hostname}:${port}`)
-// })
