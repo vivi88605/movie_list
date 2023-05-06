@@ -1,4 +1,15 @@
 <!-- ./views/index.handlebars -->
+{{!-- test --}}
+<div>
+  {{#each numbers}}
+  <span>-</span>
+  <div class="d-inline-flex align-items-center justify-content-center bg-info text-white rounded-circle my-4"
+    style="width: 30px; height: 30px;">
+    {{this}}
+  </div>
+  <span>-</span>
+  {{/each}}
+</div>
 <div class="container mt-5">
   <!-- search bar -->
   <div class="row" id="search-bar">
