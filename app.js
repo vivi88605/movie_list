@@ -12,8 +12,13 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  // res.send('This is my movie list built with Express')
-  res.render('index')
+  //create variable to store movie1
+  const movie1 = {
+    id: 1,
+    title: 'Jurassic World: Fallen Kingdom',
+    image: 'https://movie-list.alphacamp.io/posters/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg',
+  }
+  res.render('index', { movie: movie1 })
 })
 
 app.listen(port, () => {
