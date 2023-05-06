@@ -53,6 +53,21 @@ app.get('/', (req, res) => {
   res.render('index', { movies: movieList.results })
 })
 
+app.get('/movies/1', (req, res) => {
+  const movie1 = {
+    id: 1,
+    title: 'Jurassic World: Fallen Kingdom',
+    image: 'https://movie-list.alphacamp.io/posters/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg',
+    release_date: '2018-06-06',
+    description: `
+      Several years after the demise of Jurassic World, a volcanic eruption threatens the remaining dinosaurs on the
+      island of Isla Nublar. Claire Dearing, the former park manager and founder of the Dinosaur Protection Group,
+      recruits Owen Grady to help prevent the extinction of the dinosaurs once again.
+    `,
+  }
+  res.render('show', { movie: movie1 })
+})
+
 app.listen(port, () => {
   console.log(`the server is listening on localhost:${port}`)
 })
